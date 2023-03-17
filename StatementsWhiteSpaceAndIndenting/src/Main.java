@@ -6,5 +6,17 @@ public class Main {
         System.out.println(myVariable);
         myVariable--;
         System.out.println(myVariable);
+
+        System.out.println("This is" +
+                " another" +
+                " still more.");
+
+        int anotherVariable = 50;
+        myVariable--;
+        System.out.println("myVariable = " + myVariable);
+
+        if (myVariable==0){
+            System.out.println("It's now zero!");
+        }
     }
 }
