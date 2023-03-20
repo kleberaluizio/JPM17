@@ -8,7 +8,7 @@ public class Main {
         return heightInInch * 2.54;// 1 inch = 2.54 cm
     }
     public static double convertToCentimeters(int feet, int inches){
-        
+
         return convertToCentimeters((feet * 12) + inches);
     }
 }
