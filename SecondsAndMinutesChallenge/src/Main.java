@@ -35,7 +35,7 @@ public class Main {
         }else{
             int hours = minutes / 60;
             int min = minutes % 60;
-            
+
             return hours + "h " + min + "min " + seconds + "s";
         }
     }
