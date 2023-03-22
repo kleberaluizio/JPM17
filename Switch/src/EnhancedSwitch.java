@@ -12,5 +12,23 @@ public class EnhancedSwitch {
             }
             default -> System.out.println("Value was not 1, 2, 3, 4, 5 or 6");
         }
+
+        String month = "Not a month";
+        System.out.println(month + " is in the " + getQuarter(month) + " quarter");
+
+    }
+
+    public static String getQuarter(String month){
+        return switch (month) {
+            case "January", "February", "April", "March" -> "2nd";
+            case "May", "June", "July", "August" -> "1st";
+            case "September", "October", "November", "Dezember" -> "3rd";
+            default -> {
+                String badResponse = month + " is bad";
+                yield badResponse;
+            }
+
+        };
+
     }
 }
