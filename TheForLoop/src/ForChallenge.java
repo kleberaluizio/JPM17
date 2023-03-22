@@ -4,7 +4,7 @@ public class ForChallenge {
         double amount = 100.0;
         for (double i = 7.5; i <= 10.0 ; i+=0.25){
             double interestAmount = calculateInterest(amount,i);
-            if (interestAmount>8.5){
+            if (interestAmount> 8.5){
                 break;
             }
             System.out.println("100.0 at " + i +"% interest = $" + interestAmount);
