@@ -5,7 +5,7 @@ public class UsingArrayList {
         ArrayList<Integer> lista = new ArrayList<Integer>();
 
         int count = 0;
-        int initialValue = 200;
+        int initialValue = 300;
         int finalValue = 1000;
 
         // Finding the first 3 primes greater than a given value
