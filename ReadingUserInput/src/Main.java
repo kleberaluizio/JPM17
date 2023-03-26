@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main (String[] args){
         String currentYear = "2023";
@@ -13,6 +11,5 @@ public class Main {
 
         System.out.println(Double.parseDouble(doubleNumber1) + Double.parseDouble(doubleNumber2) );
 
-        Scanner age = new Scanner;
     }
 }
