@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TryCatchStatement {
     public static void main(String[] args) {
-        int currentYear = 2022;
+        int currentYear = 2023;
         try {
             System.out.println(getInputFromConsole(currentYear));
         } catch (NullPointerException e){
@@ -25,14 +25,37 @@ public class TryCatchStatement {
 
         System.out.println("Hi, what's your name?");
         String name = scanner.nextLine();
-        System.out.println("Hi "+ name + ", nice to meet you!");
 
-        System.out.println("What year were your born? ");
-        String dateOfBirth = scanner.nextLine();
-        int age = currentYear - Integer.parseInt(dateOfBirth);
-        if (age < 0 || age > 114){
-            return "Date of birth given (" + dateOfBirth + ") is not possible to be solved";
-        }
+        System.out.println("Hi "+ name + ", nice to meet you!");
+        boolean validDOB = false;
+        int age = 0;
+        do {
+            System.out.println("Enter a year of birth >= " + (currentYear - 125) + " and <= " + currentYear);
+            String dateOfBirth = scanner.nextLine();
+            age = checkData(currentYear, dateOfBirth);
+            validDOB = age < 0 ? false : true;
+
+        } while (!validDOB);
+
         return "So you are " + age + " years old";
+    }
+
+    public static int checkData (int currentYear, String dateOfBirth){
+        try {
+            int dob = Integer.parseInt(dateOfBirth);
+            int minimumYear = currentYear - 125;
+
+            if ((dob < minimumYear) || (dob > currentYear)){
+                System.out.println("Error! year not valid!");
+                return -1;
+            }
+
+            return  (currentYear -  dob);
+
+        }catch (NumberFormatException beadUserData){
+            System.out.println("Characters not allowed! Try again!");
+            return -1;
+        }
+
     }
 }
