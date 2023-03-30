@@ -3,7 +3,26 @@ public class BankAccount {
     private double accountBalance;
     private String customerName;
     private String customerEmail;
-    private int customerPhone;
+    private String customerPhone;
+
+    // Constructor
+    public BankAccount(){
+        this("56789",2.5,"Default name","Default address", "Default phone");
+        System.out.println("Empty constructor called!");
+    }
+    // This calls another construct within the constructor. Always in first line.
+    public BankAccount(String accountNumber, double accountBalance, String customerName, String customerEmail, String customerPhone) {
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+        System.out.println("Account constructor with parameters called!");
+    }
+
+    public BankAccount(String customerName, String customerEmail, String customerPhone) {
+        this("9999",100.55,customerName,customerEmail,customerPhone);
+    }
 
     // To string
 
@@ -47,10 +66,10 @@ public class BankAccount {
         this.customerEmail = email;
     }
 
-    public int getCustomerPhone() {
+    public String getCustomerPhone() {
         return customerPhone;
     }
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.customerPhone = phoneNumber;
     }
 
@@ -63,7 +82,7 @@ public class BankAccount {
     public void withdrawFunds(double withdrawValue){
 
         if ((this.accountBalance - withdrawValue) < 0){
-            System.out.println("Insufficient funds!You only have $ "+this.accountBalance + " in your account.");
+            System.out.println("Insufficient funds!You're not able to withdraw "+withdrawValue+" because you only have $ "+this.accountBalance + " in your account.");
         }else {
             this.accountBalance -= withdrawValue;
             System.out.println("Withdrawal of $ " +withdrawValue+" processed. New account balance is " + this.accountBalance);
