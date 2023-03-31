@@ -7,12 +7,17 @@ public class Main {
     Dog dog = new Dog();
     doAnimalStuff(dog, "Fast");
 
+    Dog yorkie = new Dog("Yorkie",15);
+    doAnimalStuff(yorkie, "fast");
+
+    Dog retriever = new Dog("Labrador retriever",65,"Floppy","Swimmer");
+    doAnimalStuff(retriever,"slow");
     }
 
     public static void doAnimalStuff(Animal animal, String speed){
         animal.makeNoise();
         animal.move(speed);
         System.out.println(animal);
-        System.out.println("_____-");
+        System.out.println("--------------");
     }
 }
