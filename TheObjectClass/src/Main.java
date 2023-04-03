@@ -6,6 +6,7 @@ public class Main extends Object{
 
         PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy", 8, "Carole");
         System.out.println(jimmy);
+
     }
 }
 
@@ -18,6 +19,7 @@ class Student{
          this.age = age;
      }
 
+    }
     @Override
     public String toString() {
          return name + " is "+age;
