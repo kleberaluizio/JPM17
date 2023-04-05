@@ -10,16 +10,13 @@ public class SmartKitchen {
         this.frigde = frigde;
     }
 
-    public void addWater(){
-
+    public CoffeeMaker getCoffeeMaker() {
+        return coffeeMaker;
     }
-    public void pourMilk(){
-
+    public DishWasher getDishWasher() {
+        return dishWasher;
     }
-    public void loadDishWasher(){
-
-    }
-    public void doKitchenWork(){
-
+    public Refrigerator getFrigde() {
+        return frigde;
     }
 }

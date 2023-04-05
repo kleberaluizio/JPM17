@@ -2,6 +2,14 @@ public class Refrigerator {
     private boolean hasWorkToDo;
 
     public void orderFood(){
-        System.out.println("Ordering food!");
+        if (!hasWorkToDo){
+            System.out.println("Ordering food!");
+        } else {
+            System.out.println("Not able to order food, it has work to do!");
+        }
+    }
+
+    public void hasWorkToDo(boolean hasWorkToDo) {
+        this.hasWorkToDo = hasWorkToDo;
     }
 }
