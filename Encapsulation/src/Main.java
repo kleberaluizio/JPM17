@@ -3,6 +3,7 @@ public class Main {
 
         Player player = new Player();
 
+/*
         player.name = "Tim";
         player.health = 20;
         player.weapon = "Sword";
@@ -14,6 +15,8 @@ public class Main {
         player.health = 200;
         player.loseHealth(11);
         System.out.println("Remaining = " + player.healthRemaining());
-
+*/
+        EnhancedPlayer tim = new EnhancedPlayer("Tim",200,"sword");
+        System.out.println("Initial healt is " +tim.healthRemaining());
     }
 }
