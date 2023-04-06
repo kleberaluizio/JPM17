@@ -4,6 +4,11 @@ public class SmartKitchen {
     private DishWasher dishWasher;
     private Refrigerator refrigerator;
 
+    public SmartKitchen(){
+        coffeeMaker = new CoffeeMaker();
+        dishWasher = new DishWasher();
+        refrigerator = new Refrigerator();
+    }
     public SmartKitchen(CoffeeMaker coffeeMaker, DishWasher dishWasher, Refrigerator refrigerator) {
         this.coffeeMaker = coffeeMaker;
         this.dishWasher = dishWasher;

@@ -5,26 +5,31 @@ public class Main {
         Refrigerator frigde = new Refrigerator();
         DishWasher dishWasher = new DishWasher();
 
-        SmartKitchen smartKitchen = new SmartKitchen(coffeeMaker,dishWasher,frigde);
+        SmartKitchen kitchen = new SmartKitchen(coffeeMaker,dishWasher,frigde);
 
-        smartKitchen.doKitchenWork(coffeeMaker);
-        smartKitchen.doKitchenWork(frigde);
-        smartKitchen.doKitchenWork(dishWasher);
+        kitchen.doKitchenWork(coffeeMaker);
+        kitchen.doKitchenWork(frigde);
+        kitchen.doKitchenWork(dishWasher);
         System.out.println("-".repeat(15));
 
-        smartKitchen.addWater();
-        smartKitchen.pourMilk();
-        smartKitchen.doKitchenWork(coffeeMaker);
-        smartKitchen.doKitchenWork(frigde);
-        smartKitchen.doKitchenWork(dishWasher);
+        kitchen.addWater();
+        kitchen.pourMilk();
+        kitchen.doKitchenWork(coffeeMaker);
+        kitchen.doKitchenWork(frigde);
+        kitchen.doKitchenWork(dishWasher);
         System.out.println("-".repeat(15));
 
-        smartKitchen.finishKitchenWork(coffeeMaker);
-        smartKitchen.finishKitchenWork(frigde);
-        smartKitchen.loadDishWasher();
-        smartKitchen.doKitchenWork(coffeeMaker);
-        smartKitchen.doKitchenWork(frigde);
-        smartKitchen.doKitchenWork(dishWasher);
+        kitchen.finishKitchenWork(coffeeMaker);
+        kitchen.finishKitchenWork(frigde);
+        kitchen.loadDishWasher();
+        kitchen.doKitchenWork(coffeeMaker);
+        kitchen.doKitchenWork(frigde);
+        kitchen.doKitchenWork(dishWasher);
+
+        SmartKitchen newKitchen = new SmartKitchen();
+
+        newKitchen.doKitchenWork(dishWasher);
+
 
 
     }
