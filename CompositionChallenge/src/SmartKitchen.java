@@ -16,13 +16,19 @@ public class SmartKitchen {
     }
 
     public void addWater() {
-        coffeeMaker.hasWorkToDo(true);
+        coffeeMaker.setHasWorkToDo(true);
     }
     public void pourMilk() {
-        refrigerator.hasWorkToDo(true);
+        refrigerator.setHasWorkToDo(true);
     }
     public void loadDishWasher() {
-        dishWasher.hasWorkToDo(true);
+        dishWasher.setHasWorkToDo(true);
+    }
+
+    public void doKitchenWork(){
+        coffeeMaker.brewCoffee();
+        refrigerator.orderFood();
+        dishWasher.doDishes();
     }
 
     public void doKitchenWork(CoffeeMaker coffeeMaker){
@@ -34,14 +40,10 @@ public class SmartKitchen {
     public void doKitchenWork(DishWasher dishWasher){
         dishWasher.doDishes();
     }
+    public void setKitchenState(boolean coffeFlag, boolean fridgeFlag, boolean dishWasherFlag){
+        coffeeMaker.setHasWorkToDo(coffeFlag);
+        dishWasher.setHasWorkToDo(dishWasherFlag);
+        refrigerator.setHasWorkToDo(fridgeFlag);
 
-    public void finishKitchenWork(CoffeeMaker coffeeMaker){
-        coffeeMaker.hasWorkToDo(false);
-    }
-    public void finishKitchenWork(Refrigerator refrigerator){
-        refrigerator.hasWorkToDo(false);
-    }
-    public void finishKitchenWork(DishWasher dishWasher){
-        dishWasher.hasWorkToDo(false);
     }
 }
