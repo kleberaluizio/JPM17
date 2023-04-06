@@ -19,4 +19,11 @@ public class SmartKitchen {
     public Refrigerator getFrigde() {
         return frigde;
     }
+
+    public void setKitchenState(boolean coffeFlag, boolean fridgeFlag, boolean dishWasherFlag){
+        coffeeMaker.hasWorkToDo(coffeFlag);
+        dishWasher.hasWorkToDo(dishWasherFlag);
+        frigde.hasWorkToDo(fridgeFlag);
+
+    }
 }

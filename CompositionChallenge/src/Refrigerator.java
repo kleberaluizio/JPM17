@@ -2,7 +2,7 @@ public class Refrigerator {
     private boolean hasWorkToDo;
 
     public void orderFood(){
-        if (!hasWorkToDo){
+        if (hasWorkToDo){
             System.out.println("Ordering food!");
         } else {
             System.out.println("Not able to order food, it has work to do!");

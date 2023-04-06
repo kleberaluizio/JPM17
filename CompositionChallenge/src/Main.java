@@ -7,21 +7,19 @@ public class Main {
 
         SmartKitchen smartKitchen = new SmartKitchen(coffeeMaker,dishWasher,frigde);
 
+        smartKitchen.setKitchenState(true,true,true);
         smartKitchen.getCoffeeMaker().brewCoffee();
         smartKitchen.getFrigde().orderFood();
         smartKitchen.getDishWasher().doDishes();
 
-        smartKitchen.getCoffeeMaker().hasWorkToDo(true);
-        smartKitchen.getFrigde().hasWorkToDo(true);
-        smartKitchen.getDishWasher().hasWorkToDo(true);
+        smartKitchen.setKitchenState(false,false,true);
         System.out.println("-".repeat(10));
         smartKitchen.getCoffeeMaker().brewCoffee();
         smartKitchen.getFrigde().orderFood();
         smartKitchen.getDishWasher().doDishes();
 
-        smartKitchen.getCoffeeMaker().hasWorkToDo(false);
-        smartKitchen.getFrigde().hasWorkToDo(true);
-        smartKitchen.getDishWasher().hasWorkToDo(true);
+        smartKitchen.setKitchenState(true,true,false);
+
         System.out.println("-".repeat(10));
         smartKitchen.getCoffeeMaker().brewCoffee();
         smartKitchen.getFrigde().orderFood();
