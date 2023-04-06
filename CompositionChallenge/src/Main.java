@@ -7,25 +7,25 @@ public class Main {
 
         SmartKitchen smartKitchen = new SmartKitchen(coffeeMaker,dishWasher,frigde);
 
-        smartKitchen.getCoffeeMaker().brewCoffee();
-        smartKitchen.getFrigde().orderFood();
-        smartKitchen.getDishWasher().doDishes();
+        smartKitchen.doKitchenWork(coffeeMaker);
+        smartKitchen.doKitchenWork(frigde);
+        smartKitchen.doKitchenWork(dishWasher);
+        System.out.println("-".repeat(15));
 
-        smartKitchen.getCoffeeMaker().hasWorkToDo(true);
-        smartKitchen.getFrigde().hasWorkToDo(true);
-        smartKitchen.getDishWasher().hasWorkToDo(true);
-        System.out.println("-".repeat(10));
-        smartKitchen.getCoffeeMaker().brewCoffee();
-        smartKitchen.getFrigde().orderFood();
-        smartKitchen.getDishWasher().doDishes();
+        smartKitchen.addWater();
+        smartKitchen.pourMilk();
+        smartKitchen.doKitchenWork(coffeeMaker);
+        smartKitchen.doKitchenWork(frigde);
+        smartKitchen.doKitchenWork(dishWasher);
+        System.out.println("-".repeat(15));
 
-        smartKitchen.getCoffeeMaker().hasWorkToDo(false);
-        smartKitchen.getFrigde().hasWorkToDo(true);
-        smartKitchen.getDishWasher().hasWorkToDo(true);
-        System.out.println("-".repeat(10));
-        smartKitchen.getCoffeeMaker().brewCoffee();
-        smartKitchen.getFrigde().orderFood();
-        smartKitchen.getDishWasher().doDishes();
+        smartKitchen.finishKitchenWork(coffeeMaker);
+        smartKitchen.finishKitchenWork(frigde);
+        smartKitchen.loadDishWasher();
+        smartKitchen.doKitchenWork(coffeeMaker);
+        smartKitchen.doKitchenWork(frigde);
+        smartKitchen.doKitchenWork(dishWasher);
+
 
     }
 }

@@ -2,21 +2,41 @@ public class SmartKitchen {
 
     private CoffeeMaker coffeeMaker;
     private DishWasher dishWasher;
-    private Refrigerator frigde;
+    private Refrigerator refrigerator;
 
-    public SmartKitchen(CoffeeMaker coffeeMaker,DishWasher dishWasher,Refrigerator frigde){
+    public SmartKitchen(CoffeeMaker coffeeMaker, DishWasher dishWasher, Refrigerator refrigerator) {
         this.coffeeMaker = coffeeMaker;
         this.dishWasher = dishWasher;
-        this.frigde = frigde;
+        this.refrigerator = refrigerator;
     }
 
-    public CoffeeMaker getCoffeeMaker() {
-        return coffeeMaker;
+    public void addWater() {
+        coffeeMaker.hasWorkToDo(true);
     }
-    public DishWasher getDishWasher() {
-        return dishWasher;
+    public void pourMilk() {
+        refrigerator.hasWorkToDo(true);
     }
-    public Refrigerator getFrigde() {
-        return frigde;
+    public void loadDishWasher() {
+        dishWasher.hasWorkToDo(true);
+    }
+
+    public void doKitchenWork(CoffeeMaker coffeeMaker){
+        coffeeMaker.brewCoffee();
+    }
+    public void doKitchenWork(Refrigerator refrigerator){
+        refrigerator.orderFood();
+    }
+    public void doKitchenWork(DishWasher dishWasher){
+        dishWasher.doDishes();
+    }
+
+    public void finishKitchenWork(CoffeeMaker coffeeMaker){
+        coffeeMaker.hasWorkToDo(false);
+    }
+    public void finishKitchenWork(Refrigerator refrigerator){
+        refrigerator.hasWorkToDo(false);
+    }
+    public void finishKitchenWork(DishWasher dishWasher){
+        dishWasher.hasWorkToDo(false);
     }
 }
