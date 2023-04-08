@@ -11,11 +11,12 @@ public class ElectricCar extends Car{
     @Override
     public void startEngine() {
         super.startEngine();
+        System.out.println("Using eletricity!");
     }
 
     @Override
     public void drive() {
         super.drive();
+        System.out.println("Driving and making no noise at all!");
     }
-
 }

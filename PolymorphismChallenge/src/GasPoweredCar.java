@@ -1,22 +1,27 @@
 public class GasPoweredCar extends  Car{
 
-    private double avgKmPerLitre;
-    private int cylinders;
+    private double avgKmPerLiter;
+    private int cylinders = 6;
 
-    public GasPoweredCar(String description, double avgKmPerLitre, int cylinders){
+    public GasPoweredCar(String description){
         super(description);
-        this.avgKmPerLitre = avgKmPerLitre;
+    }
+
+    public GasPoweredCar(String description, double avgKmPerLiter,int cylinders){
+        super(description);
+        this.avgKmPerLiter = avgKmPerLiter;
         this.cylinders = cylinders;
     }
 
     @Override
     public void startEngine() {
-        super.startEngine();
+        System.out.printf("Gas -> All %d cylinders are fired up, ready!%n", cylinders);
     }
 
     @Override
-    public void drive() {
-        super.drive();
+    public void runEngine() {
+        System.out.printf("Gas -> usage exceeds the average: %.2f %n", avgKmPerLiter);
+
     }
 
 }

@@ -6,10 +6,17 @@ public class Car {
         this.description = description;
     }
 
-    public void startEngine(){}
-    public void drive(){}
-    protected void runEngine(){}         // It will be called only by the drive method
+    public void startEngine(){
+        System.out.println("Car -> startEngine");
+    }
 
-    //  public static void getCar(){}
+    protected void runEngine(){
+        System.out.println("Car -> runEngine");
+    }         // It will be called only by the drive method
+
+    public void drive(){
+        System.out.println("Car -> driving, type is "+getClass().getSimpleName());
+        runEngine();
+    }
 
 }
