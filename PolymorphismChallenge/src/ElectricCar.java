@@ -2,6 +2,9 @@ public class ElectricCar extends Car{
     private double avgKmPerCharge;
     private int batterySize;
 
+    public ElectricCar(String description) {
+        super(description);
+    }
     public ElectricCar(String description, double avgKmPerCharge, int batterySize) {
         super(description);
         this.avgKmPerCharge = avgKmPerCharge;
@@ -10,13 +13,13 @@ public class ElectricCar extends Car{
 
     @Override
     public void startEngine() {
-        super.startEngine();
-        System.out.println("Using eletricity!");
+        System.out.printf("BEV -> switch %d kWh battery on, Ready!%n",batterySize);
     }
 
     @Override
-    public void drive() {
-        super.drive();
-        System.out.println("Driving and making no noise at all!");
+    public void runEngine() {
+        System.out.printf("BEV -> usage under the average: %.2f %n",avgKmPerCharge);
+
     }
+
 }

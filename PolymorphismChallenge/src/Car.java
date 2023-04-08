@@ -6,6 +6,7 @@ public class Car {
         this.description = description;
     }
 
+
     public void startEngine(){
         System.out.println("Car -> startEngine");
     }
@@ -19,4 +20,15 @@ public class Car {
         runEngine();
     }
 
+    //Factory Method
+    public static Car getCar(String type, String description){
+        return switch(type.toUpperCase().charAt(0)){
+
+            case 'G' -> new GasPoweredCar(description);
+            case 'E' -> new ElectricCar(description);
+            case 'H' -> new HybridCar(description);
+            default -> new Car(description);
+
+        };
+    }
 }

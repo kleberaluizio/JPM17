@@ -1,29 +1,27 @@
 public class HybridCar extends Car{
-    private double avgKmPerLitre;
+    private double avgKmPerLiter;
     private int batterySize;
     private int cylinders;
-    private boolean isRunningInGas;
 
-    public HybridCar(String description, double avgKmPerLitre, int batterySize, int cylinders, boolean isRunningInGas) {
+    public HybridCar(String description) {
         super(description);
-        this.avgKmPerLitre = avgKmPerLitre;
+    }
+    public HybridCar(String description, double avgKmPerLiter, int batterySize, int cylinders) {
+        super(description);
+        this.avgKmPerLiter = avgKmPerLiter;
         this.batterySize = batterySize;
         this.cylinders = cylinders;
-        this.isRunningInGas = isRunningInGas;
     }
 
     @Override
     public void startEngine() {
-        super.startEngine();
-        String message = (isRunningInGas)?"Burning gas!":"Using electricity!";
-        System.out.println(message);
-    }
+        System.out.printf("Hybrid -> %d cylinders are fired up. %n", cylinders);
+        System.out.printf("Hybrid -> switch %d kWh battery on, Ready!%n",batterySize);
 
+    }
     @Override
-    public void drive() {
-        super.drive();
-        String message = (isRunningInGas)?"Driving and making loud noise!":"Driving and making no noise at all!";
-        System.out.println(message);
-    }
+    public void runEngine() {
+        System.out.printf("Hybrid -> usage below average: %.2f %n", avgKmPerLiter);
 
+    }
 }
