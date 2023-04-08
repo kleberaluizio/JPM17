@@ -22,6 +22,7 @@ public class Movie {
             case 'C'-> new Comedy(title);
             case 'S'-> new ScienceFiction(title);
             default -> new Movie(title);
+
         };
     }
 }
