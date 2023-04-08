@@ -21,6 +21,20 @@ public class NextMain {
 
         var plane = new Comedy("Airplane");
         plane.watchComedy();
+        System.out.println("-".repeat(15));
+
+        Object unknownObject = Movie.getMovie("S","Airplane");
+        System.out.println(unknownObject.getClass());
+        if (unknownObject.getClass().getSimpleName() == "Comedy"){
+            Comedy c = (Comedy) unknownObject;
+            c.watchComedy();
+
+        } else if (unknownObject instanceof Adventure) {
+            ((Adventure) unknownObject).watchAdventure();
+        } else if (unknownObject instanceof ScienceFiction syfy) {
+            syfy.watchScience();
+        }
+
 
     }
 }
