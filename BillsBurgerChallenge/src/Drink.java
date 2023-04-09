@@ -26,7 +26,7 @@ public class Drink {
 
     private DrinkType drinkType;
     private double drinkPrice;
-    private DrinkSize drinkSize;
+    private Size drinkSize;
     private boolean isDrinking;
 
     public void isDrinking(boolean isDrinking){
@@ -34,8 +34,6 @@ public class Drink {
     }
 
     public static double getValue(String drinkTypeChoice, String drinkSizeChoice){
-        System.out.println(DrinkType.Water.name());
-        System.out.println(drinkTypeChoice);
 
         if (drinkTypeChoice.equalsIgnoreCase(DrinkType.Water.toString())){
             return DrinkType.Water.value;
