@@ -1,7 +1,7 @@
 public class SideItems {
 
     public enum SideItem{
-        Fries(2.49),ChickeNuggets(3.99),  McMelt(3.99), QuarterPounder(3.79);
+        Fries(1.39),ChickeNuggets(3.29),  OnionRings(1.49);
         private double value;
 
         SideItem(double value){

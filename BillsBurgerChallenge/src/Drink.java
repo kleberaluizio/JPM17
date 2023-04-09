@@ -29,6 +29,10 @@ public class Drink {
     private Size drinkSize;
     private boolean isDrinking;
 
+    public Size getSize(){
+        return drinkSize;
+    }
+
     public void isDrinking(boolean isDrinking){
         this.isDrinking = isDrinking;
     }
