@@ -31,18 +31,35 @@ public class MealOrder {
             String drinkTypeChoice = JOptionPane.showInputDialog(null, "Choose an option:", "Drink's Menu",
                     JOptionPane.PLAIN_MESSAGE, null, drinkTypeOption, drinkTypeOption[0]).toString();
 
+            if (drinkTypeChoice.contains("Water")) {
+                double drinkPrice = Drink.getValue();
+                addToList(drinkTypeChoice , drinkPrice);
 
-            Object[] drinkSizeOption = Drink.DrinkSize.values();
-            String drinkSizeChoice = JOptionPane.showInputDialog(null, "Choose an option:", "Drink's Size",
-                    JOptionPane.PLAIN_MESSAGE, null, drinkSizeOption, drinkSizeOption[0]).toString();
+            } else {
+                String drinkSize = getDrinkSize(drinkTypeChoice);
+                double drinkPrice = getDrinkPrice(drinkTypeChoice,drinkSize);
+
+                addToList(drinkTypeChoice + " ("+drinkSize+" size)", drinkPrice);
+
+            }
 
 
-            double drinkPrice = Drink.getValue(drinkTypeChoice, drinkSizeChoice);
-
-            addToList(drinkTypeChoice, drinkPrice);
             //System.out.println(drinkTypeChoice + " = " + drinkPrice);
         }
 
+    }
+
+    public String getDrinkSize(String drinkTypeChoice){
+        Object[] drinkSizeOption = Drink.DrinkSize.values();
+        String drinkSizeChoice = JOptionPane.showInputDialog(null, "Choose an option:", "Drink's Size",
+                JOptionPane.PLAIN_MESSAGE, null, drinkSizeOption, drinkSizeOption[0]).toString();
+
+
+        return  drinkSizeChoice;
+    }
+    private double getDrinkPrice(String drinkTypeChoice, String drinkSizeChoice){
+        double drinkPrice = Drink.getValue(drinkTypeChoice, drinkSizeChoice);
+        return drinkPrice;
     }
 
     public void orderSideItem() {
@@ -61,19 +78,10 @@ public class MealOrder {
     public void printOrderPrice(){
         double amount = 0;
 
-        System.out.println("_".repeat(10) + " Meal Order "+"_".repeat(10));
-
-        for (int i = 0; i< items.size(); i++){
-            amount = amount + prices.get(i);
-            String text = items.get(i) + " = "+prices.get(i);
-            System.out.println(items.get(i) + " = "+prices.get(i));
-        }
-        System.out.printf("Total amount for the meal = "+ amount);
-
-
         StringBuilder message = new StringBuilder();
         for (int i = 0; i < items.size(); i++) {
-            message.append(items.get(i)).append(" - ").append(prices.get(i)).append("\n");
+            amount = amount + prices.get(i);
+            message.append(items.get(i).indent(1)).append(" = ").append(prices.get(i)).append("\n");
         }
         message.append("\n");
         message.append("Total amount = ").append(amount).append("\n");
