@@ -11,6 +11,19 @@ public class Hamburger {
         public double getValue(){
             return value;
         }
+
+        enum Extra{
+            addCheese(1), addPicles(2), addBurger(3);
+            private int value;
+
+            Extra(int value){
+                this.value = value;
+            }
+
+            public int getValue(){
+                return value;
+            }
+        }
     }
     private BurgerType burgerType;
     private double burgerPrice;

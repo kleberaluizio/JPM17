@@ -18,9 +18,21 @@ public class MealOrder {
                 JOptionPane.PLAIN_MESSAGE, null, hamburgerOptions, hamburgerOptions[0]).toString();
         double hamburguerPrice = Enum.valueOf(Hamburger.BurgerType.class, hamburgerChoice).getValue();
 
+        orderExtraToppings();
         addToList(hamburgerChoice, hamburguerPrice);
         //System.out.println(hamburgerChoice + " = " + hamburguerPrice);
     }
+
+    public void orderExtraToppings() {
+        int drinkChoice = JOptionPane.showConfirmDialog(null, "Do you want something to add a extra topping?", "Extra Topping", JOptionPane.YES_NO_OPTION);
+
+        if (drinkChoice == JOptionPane.YES_OPTION) {
+            
+
+        }
+    }
+
+
 
     public void orderDrink() {
         int drinkChoice = JOptionPane.showConfirmDialog(null, "Do you want something to drink?", "Confirmation", JOptionPane.YES_NO_OPTION);
