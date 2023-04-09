@@ -12,19 +12,42 @@ public class Drink {
         }
     }
     enum DrinkType{
-        Coke(1), Sprite(2), DrPepper(3), Fanta(4), Water(5);
-        private int value;
+        Coke(1), Sprite(1), DrPepper(1), Fanta(1), Water(1.49);
+        private double value;
 
-        DrinkType(int value){
+        DrinkType(double value){
             this.value = value;
         }
-
-        public int getValue(){
+        public double getValue(){
             return value;
         }
+
     }
 
     private DrinkType drinkType;
     private double drinkPrice;
     private DrinkSize drinkSize;
+    private boolean isDrinking;
+
+    public void isDrinking(boolean isDrinking){
+        this.isDrinking = isDrinking;
+    }
+
+    public static double getValue(String drinkTypeChoice, String drinkSizeChoice){
+        System.out.println(DrinkType.Water.name());
+        System.out.println(drinkTypeChoice);
+
+        if (drinkTypeChoice.equalsIgnoreCase(DrinkType.Water.toString())){
+            return DrinkType.Water.value;
+
+        }else {
+            if (drinkSizeChoice.equalsIgnoreCase(DrinkSize.Large.toString())) {
+                return 1.49;
+            } else if (drinkSizeChoice.equalsIgnoreCase(DrinkSize.Medium.toString())) {
+                return 1.29;
+            } else {
+                return DrinkType.Coke.value;
+            }
+        }
+    }
 }
