@@ -2,14 +2,14 @@ public class SideItems {
 
     public enum SideItem{
         Fries(1.39),ChickeNuggets(3.29),  OnionRings(1.49);
-        private double value;
+        private double price;
 
-        SideItem(double value){
-            this.value = value;
+        SideItem(double price){
+            this.price = price;
         }
 
-        public double getValue(){
-            return value;
+        public double getPrice(){
+            return price;
         }
     }
     private SideItem sideItem;
