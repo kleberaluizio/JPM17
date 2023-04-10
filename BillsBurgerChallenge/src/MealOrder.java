@@ -16,18 +16,27 @@ public class MealOrder {
         Object[] hamburgerOptions = Hamburger.BurgerType.values();
         String hamburgerChoice = JOptionPane.showInputDialog(null, "Choose an option:", "Hamburger's Menu",
                 JOptionPane.PLAIN_MESSAGE, null, hamburgerOptions, hamburgerOptions[0]).toString();
-        double hamburguerPrice = Enum.valueOf(Hamburger.BurgerType.class, hamburgerChoice).getValue();
 
-        orderExtraToppings();
-        addToList(hamburgerChoice, hamburguerPrice);
+        double hamburgerPrice = Enum.valueOf(Hamburger.BurgerType.class, hamburgerChoice).getPrice();
+
+        addToList(hamburgerChoice, hamburgerPrice);
+        orderExtraToppings(hamburgerChoice,hamburgerPrice);
+
         //System.out.println(hamburgerChoice + " = " + hamburguerPrice);
     }
 
-    public void orderExtraToppings() {
-        int drinkChoice = JOptionPane.showConfirmDialog(null, "Do you want something to add a extra topping?", "Extra Topping", JOptionPane.YES_NO_OPTION);
+    public void orderExtraToppings(String hamburgerChoice,double hamburgerPrice) {
+        int drinkChoice = JOptionPane.showConfirmDialog(null, "Do you want some extra topping?", "Extra Topping", JOptionPane.YES_NO_OPTION);
 
         if (drinkChoice == JOptionPane.YES_OPTION) {
-            
+
+            Object[] extraOption = Hamburger.Extra.values();
+            String extraChoice = JOptionPane.showInputDialog(null, "Choose an option:", "Extra Topping",
+                    JOptionPane.PLAIN_MESSAGE, null, extraOption, extraOption[0]).toString();
+
+            double finalBurgerPrice = hamburgerPrice +Hamburger.Extra.Burger.getPrice();
+            items.set(0,hamburgerChoice + " (+ extra "+extraChoice+")");
+            prices.set(0,finalBurgerPrice);
 
         }
     }
@@ -93,10 +102,11 @@ public class MealOrder {
         StringBuilder message = new StringBuilder();
         for (int i = 0; i < items.size(); i++) {
             amount = amount + prices.get(i);
-            message.append(items.get(i).indent(1)).append(" = ").append(prices.get(i)).append("\n");
+            String price = String.format("%.2f",prices.get(i));
+            message.append(items.get(i).indent(1)).append(" = ").append(price).append("\n");
         }
         message.append("\n");
-        message.append("Total amount = ").append(amount).append("\n");
+        message.append("Total amount = ").append(String.format("%.2f",amount)).append("\n");
         JOptionPane.showMessageDialog(null, message.toString(), " Meal Order ", JOptionPane.PLAIN_MESSAGE);
 
 

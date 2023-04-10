@@ -1,28 +1,28 @@
 public class Hamburger {
 
-    public enum BurgerType{
+    enum BurgerType{
         BigMac(2.49),McChicken(3.99),  McMelt(3.99), QuarterPounder(3.79);
-        private double value;
+        final double price;
 
-        BurgerType(double value){
-            this.value = value;
+        BurgerType(double price){
+            this.price = price;
         }
 
-        public double getValue(){
-            return value;
+        public double getPrice(){
+            return price;
         }
 
-        enum Extra{
-            addCheese(1), addPicles(2), addBurger(3);
-            private int value;
+    }
+    enum Extra{
+        Cheese(0.55), Picles(0.39), Burger(1.2);
+        final double price;
 
-            Extra(int value){
-                this.value = value;
-            }
+        Extra(double price){
+            this.price = price;
+        }
 
-            public int getValue(){
-                return value;
-            }
+        public double getPrice(){
+            return price;
         }
     }
     private BurgerType burgerType;
@@ -33,17 +33,5 @@ public class Hamburger {
         this.burgerType = burgerType;
         this.burgerPrice= burgerPrice;
     }
-    public BurgerType getBurgerType() {
-        return burgerType;
-    }
-    public void setBurgerType(BurgerType burgerType) {
-        this.burgerType = burgerType;
-    }
 
-    public ExtraTopping getExtra() {
-        return extra;
-    }
-    public void setExtra(ExtraTopping extra) {
-        this.extra = extra;
-    }
 }
