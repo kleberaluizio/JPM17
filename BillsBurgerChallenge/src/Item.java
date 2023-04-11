@@ -30,7 +30,7 @@ public class Item {
         };
     }
     public void setSize(String size){
-        this.size = size;
+        this.size = size.toUpperCase();
     }
     public static void printItem(String name, double price){
         System.out.printf("%20s:%6.2f%n", name, price);
