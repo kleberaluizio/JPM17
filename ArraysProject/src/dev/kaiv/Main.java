@@ -33,7 +33,7 @@ public class Main {
         for (String name: names){
             System.out.println(name);
         }
-        System.out.println();
+        System.out.p rintln();
 
         System.out.println(Arrays.toString(newArray));
         Object objectVariable = newArray;
