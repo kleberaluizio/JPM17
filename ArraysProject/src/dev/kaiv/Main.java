@@ -23,7 +23,7 @@ public class Main {
         newArray = new int[5];
         //newArray = new int[]{5, 4, 3, 2, 1};
         for (int i =0; i <newArray.length;i++){
-            newArray[i] = newArray.length -i;
+            newArray[i] =  newArray.length -i;
             System.out.print(newArray[i] + " ");
         }
 
@@ -33,7 +33,7 @@ public class Main {
         for (String name: names){
             System.out.println(name);
         }
-        System.out.p rintln();
+        System.out.println();
 
         System.out.println(Arrays.toString(newArray));
         Object objectVariable = newArray;
