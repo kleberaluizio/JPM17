@@ -1,6 +1,7 @@
 package dev.kaiv;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +19,10 @@ public class Main {
 
         int [] reversedCopy = reversedCopy(returnedArray);
         System.out.println("reverseCopy = " + Arrays.toString(reversedCopy));
+
+        int [] reversedOrder = Arrays.copyOf(returnedArray, returnedArray.length);
+        Arrays.sort(Comparator.reverseOrder(reversedOrder));
+        System.out.println("reverseOrder = " + Arrays.toString(reversedCopy));
 
 
     }
