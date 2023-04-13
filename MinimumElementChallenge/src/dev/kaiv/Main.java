@@ -11,6 +11,40 @@ public class Main {
 
         int returnedMin = findMin(returnedArray);
         System.out.println("Minimum value found = "+ returnedMin);
+        System.out.println("-".repeat(20));
+
+        //reverse(returnedArray);
+        //System.out.println("Final = " + Arrays.toString(returnedArray));
+
+        int [] reversedCopy = reversedCopy(returnedArray);
+        System.out.println("reverseCopy = " + Arrays.toString(reversedCopy));
+
+
+    }
+    public static void reverse(int[] array){
+
+        int lastIndex = (array.length - 1);
+        int halfLength = array.length/2;
+
+
+        for (int i = 0; i < halfLength ;i++) {
+            int temp = array[i];
+            array[i] = array[lastIndex - i];
+            array[lastIndex - i] = temp;
+            System.out.println(Arrays.toString(array));
+        }
+    }
+    public static int[] reversedCopy(int[] array){
+        int[] reversedCopy = Arrays.copyOf(array,array.length);
+        int lastIndex = (array.length - 1);
+        int halfLength = array.length/2;
+
+        for (int i = 0; i < halfLength ;i++) {
+            reversedCopy[i] = array[lastIndex - i];
+            reversedCopy[lastIndex - i] = array[i];
+            System.out.println(Arrays.toString(reversedCopy));
+        }
+        return reversedCopy;
     }
     public static int[] readIntegers() {
         Scanner scanner = new Scanner(System.in);
