@@ -5,75 +5,71 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         boolean shutdown = false;
-        ArrayList<String> grocery = new ArrayList<>();
-        Scanner s = new Scanner(System.in);
+        ArrayList<String> groceries = new ArrayList<>();
 
         while(!shutdown) {
-            String prompt = """
+            printActions();
+            switch (Integer.parseInt(scanner.nextLine())) {
+                case 1:
+                    addItems(groceries);
+                    break;
+                case 2:
+                    removeItems(groceries);
+                    break;
+                default:
+                    shutdown = true;
+
+            }
+            printList(groceries);
+        }
+    }
+
+    public static void printActions(){
+        String textBlock = """
                     Available actions:
                     0 - to shutdown
                     1 - to add item(s) to list (comma delimited list)
                     2 - to remove any items (comma delimited list)
                                     
-                    Enter a number for which action you want to do:
-                    """;
-            System.out.println(prompt);
-            int choice = Integer.parseInt(s.nextLine());
-
-
-            switch (choice) {
-                case 0:
-                    shutdown = true;
-                    break;
-                case 1:
-                    System.out.println("Add item(s) to list (comma delimited list)");
-                    addItems(grocery);
-                    break;
-                case 2:
-                    System.out.println("Remove item(s) to list (comma delimited list)");
-                    removeItems(grocery);
-                    break;
-                default:
-
-            }
-            printList(grocery);
-        }
+                    Enter a number for which action you want to do: """;
+        System.out.println(textBlock + " ");
     }
-
-    public static void addItems(ArrayList grocery){
-        Scanner s = new Scanner(System.in);
-        var input = s.nextLine();
+    public static void addItems(ArrayList<String>  groceries){
+        System.out.println("Add item(s) to list (comma delimited list)");
+        var input = scanner.nextLine();
         String[] items = input.split(",");
 
         for(String item : items){
             item = item.trim();
-            if(grocery.contains(item)) {
+            if(groceries.contains(item) || item.isBlank()) {
                 continue;
             }
-            grocery.add(item);
+            groceries.add(item);
         }
     }
 
-    public static void removeItems(ArrayList grocery){
-        Scanner s = new Scanner(System.in);
-        var input = s.nextLine();
+    public static void removeItems(ArrayList<String> groceries){
+        System.out.println("Remove item(s) to list (comma delimited list)");
+        var input = scanner.nextLine();
         String[] items = input.split(",");
 
         for(String item : items){
             item = item.trim();
-            if(grocery.contains(item)) {
-                grocery.remove(item);
+            if(groceries.contains(item)) {
+                groceries.remove(item);
             }
         }
     }
 
-    public static void printList(ArrayList grocery){
-        grocery.sort(Comparator.naturalOrder());
+    public static void printList(ArrayList<String> groceries){
+        groceries.sort(Comparator.naturalOrder());
         System.out.println("-".repeat(10) + " GROCERY LIST " + "-".repeat(10));
-        System.out.println(grocery);
+        System.out.println(groceries);
         System.out.println("-".repeat(34));
     }
 
