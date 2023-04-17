@@ -50,6 +50,35 @@ public class BankType {
     public ArrayList<Customer> getCustomers(){
         return customersArray;
     }
+
+    private Customer getCustomer (String customerName){
+        for (var customer : customersArray){
+            if (customer.getName().equalsIgnoreCase(customerName)){
+                return customer;
+            }
+        }
+        System.out.printf("Customer (%s) wasn't found! \n", customerName);
+
+        return null;
+    }
+    public void printStatement(String customerName){
+        Customer customerO= new Customer(customerName);
+
+        for (var customer : customersArray){
+            if (customer.getName().equalsIgnoreCase(customerName)){
+                customerO = customer;
+            }
+        }
+
+        System.out.println("-".repeat(30));
+        System.out.println("Customer Name: "+ customerO.getName());
+        System.out.println("Transactions: ");
+        for (int i = 0; i< customerO.getTransactions().size();i++){
+            double d = customerO.getTransactions().get(i);
+            System.out.printf("$%10.2f (%s)%n", d, d<0? "debit" : "credit");
+        }
+
+    }
 }
 
 

@@ -1,8 +1,5 @@
 package dev.kaiv;
 
-import java.util.ArrayList;
-
-
 public class Main {
     public static void main(String[] args) {
         BankType santander = new BankType("Santander");
@@ -16,7 +13,7 @@ public class Main {
 
 
         for (Customer customer : santander.getCustomers()){
-            System.out.println(customer);
+            santander.printStatement(customer.getName());
         }
 
 

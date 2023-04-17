@@ -29,4 +29,7 @@ public class Customer {
         System.out.println(getName() + "'s transaction amounts = " + value);
 
     }
+    public ArrayList<Double>  getTransactions(){
+        return transactions;
+    }
 }
