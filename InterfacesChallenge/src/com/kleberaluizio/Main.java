@@ -15,7 +15,7 @@ public class Main {
         System.out.println(tim);
 
         System.out.println("-".repeat(30));
-        
+
         ISaveable werewolf = new Monsters("Werewolf", 20, 40);
         System.out.println("Strength = "+ ((Monsters) werewolf).getStrength()); // Casting!!
         System.out.println(werewolf);
