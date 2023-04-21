@@ -45,6 +45,8 @@ public class Main {
         album.addSong("C.O.D.", 5.25);
         album.addSong("Breaking the rules", 5.32);
         album.addSong("Night of the long knives", 5.12);
+        album.addSong("T.N.T", 4.42);
+
         albums.add(album);
 
         LinkedList<Song> playList = new LinkedList<Song>();
