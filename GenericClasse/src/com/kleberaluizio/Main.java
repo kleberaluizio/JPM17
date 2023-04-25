@@ -6,13 +6,39 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckam = new SoccerPlayer("Beckham");
 
-        Team adelaideCrows = new Team("Adelaide Crows");
+
+        Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
 
         adelaideCrows.addPlayer(joe);
-        adelaideCrows.addPlayer(pat);
-        adelaideCrows.addPlayer(beckam);
+//        adelaideCrows.addPlayer(pat);
+//        adelaideCrows.addPlayer(beckam);
 
         System.out.println(adelaideCrows.numPlayers());
+
+        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
+        baseballTeam.addPlayer(pat);
+
+        Team<SoccerPlayer> soccerTeam = new Team<>("Manchester United");
+        soccerTeam.addPlayer(beckam);
+
+        Team<FootballPlayer> melbourne = new Team<>("Melbourne");
+        FootballPlayer banks = new FootballPlayer("Gordon Banks");
+        melbourne.addPlayer(banks);
+
+        Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
+        Team<FootballPlayer> fremantle = new Team<>("Fremantle");
+
+        hawthorn.matchResult(fremantle,1,0);
+        hawthorn.matchResult(adelaideCrows,3,8);
+
+        adelaideCrows.matchResult(fremantle,2,1);
+        adelaideCrows.matchResult(baseballTeam,1,1);
+
+        System.out.println(hawthorn.getName() + " = " + hawthorn.ranking());
+        System.out.println(fremantle.getName() + " = " + fremantle.ranking());
+        System.out.println(adelaideCrows.getName() + " = " + adelaideCrows.ranking());
+
+
 
         //indo para o video 163
     }
