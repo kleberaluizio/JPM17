@@ -6,4 +6,5 @@ interface Accessible {
     public void methodA();
     void methodB();
     boolean methodC();
+
 }
