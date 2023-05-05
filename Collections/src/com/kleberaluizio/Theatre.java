@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Theatre {
     private final String theatreName;
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>();
 
     public Theatre(String theatreName, int numRows, int seatsPerRow) {
         this.theatreName = theatreName;
@@ -34,7 +34,7 @@ public class Theatre {
             System.out.println("There is no seat " + seatNumber);
             return false;
         }
-
+//  Using binary search instead of using the following code.
 //        for (Seat seat :  seats){
 //            System.out.println(".");
 //            if(seat.getSeatNumber().equals(seatNumber)){
@@ -57,7 +57,7 @@ public class Theatre {
     }
 
     //INNER CLASS
-    private class Seat implements Comparable<Seat> {
+    public class Seat implements Comparable<Seat> {
         private final String seatNumber;
         private boolean reserved = false;
 
