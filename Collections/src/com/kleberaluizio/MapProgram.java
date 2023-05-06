@@ -26,6 +26,22 @@ public class MapProgram {
         } else {
             languages.put("Java","this course is about Java");
         }
+        System.out.println("=".repeat(100));
+
+//        languages.remove("Lisp");
+        if(languages.remove("Algol","an algorithmic language")){
+            System.out.println("Algol removed");
+        }else {
+            System.out.println("Algol not removed, ky/value pair not found!");
+        }
+        System.out.println("=".repeat(100));
+
+        if(languages.replace("Lisp","Therein lies madness "," a functional programming language with imperative features")){
+            System.out.println("Lisp replaced");
+        }else{
+            System.out.println("Lisp was not replaced");
+        }
+        System.out.println(languages.replace("Scala","This will not be added"));
 
         System.out.println("=".repeat(100));
         for(String key : languages.keySet()){
