@@ -2,7 +2,7 @@ package com.kleberaluizio;
 
 public class StringProject {
     public static void main(String[] args) {
-        String[] road = "You are stangin at the end of a road before a small brick building".split(" ");
+        String[] road = "You are standing at the end of a road before a small brick building".split(" ");
         for(String i : road){
             System.out.println(i);
         }
