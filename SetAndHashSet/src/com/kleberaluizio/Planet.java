@@ -3,7 +3,7 @@ package com.kleberaluizio;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Planet extends HeavenlyBody{
+public class Planet extends HeavenlyBody implements hasSatellites{
     private final Set<HeavenlyBody> satellites;
 
     public Planet(String name, double orbitalPeriod, BodyType bodyType) {

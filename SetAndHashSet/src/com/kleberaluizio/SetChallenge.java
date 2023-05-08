@@ -2,7 +2,7 @@ package com.kleberaluizio;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//195
 public class SetChallenge {
     private static Set<HeavenlyBody> solarSystem = new HashSet<>();
     private static Set<HeavenlyBody> planets = new HashSet<>();
@@ -40,9 +40,6 @@ public class SetChallenge {
         solarSystem.add(tempMoon);
         moons.add(tempMoon);
         temp.addMoon(tempMoon);
-
-        printSolarSystem(solarSystem);
-        System.out.println("=".repeat(100));
 
         temp = new Planet("Jupiter", 4332,BodyType.PLANET);
         solarSystem.add(temp);
@@ -103,7 +100,8 @@ public class SetChallenge {
 //    }
     public static void printSolarSystem(Set<HeavenlyBody> solarSystem){
         for(HeavenlyBody s : solarSystem){
-            System.out.println(s.getName() + " : " + s.getBodyType());
+//            System.out.println(s.getName() + " : " + s.getBodyType());
+            System.out.println(s.toString());
         }
     }
     public static void printSet(Set<HeavenlyBody> set){
