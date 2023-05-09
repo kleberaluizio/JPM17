@@ -95,7 +95,7 @@ public class SetChallenge {
 
         System.out.println("All Moons");
         printSet(moons);
-        
+
         System.out.println("The solar system contains:");
         for(HeavenlyBody.Key k : solarSystem.keySet()){
             System.out.println(solarSystem.get(k));
