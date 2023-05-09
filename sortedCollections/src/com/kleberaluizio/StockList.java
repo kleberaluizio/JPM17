@@ -1,14 +1,15 @@
 package com.kleberaluizio;
 
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
+// 199
 public class StockList {
     private final Map<String,StockItem> list;
 
     public StockList() {
-        this.list = new HashMap<>();
+        this.list = new LinkedHashMap<>();
     }
 
     public int addStock(StockItem item){
@@ -48,16 +49,16 @@ public class StockList {
 
     @Override
     public String toString() {
-        String s = "\nStock List \n ";
+        String s = "\nStock List \n";
         double totalCost = 0.0;
         for(Map.Entry<String, StockItem> item : list.entrySet()) {
             StockItem stockItem = item.getValue();
             double itemValue = stockItem.getPrice() * stockItem.quantityInStock();
 
             s = s + stockItem + ". There are " + stockItem.getName() + " in stock. Value of items: ";
-            s = s + itemValue + "\n";
+            s = s + String.format("%.2f",itemValue) + "\n";
             totalCost += itemValue;
         }
-        return s + " Total stock value "+ totalCost;
+        return s + "Total stock value "+ String.format("%.2f",totalCost);
     }
 }
