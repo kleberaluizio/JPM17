@@ -5,5 +5,6 @@ import java.util.Set;
 public interface hasSatellites {
     public Set<HeavenlyBody> satellites = null;
     public Set<HeavenlyBody> getSatellites();
+    public boolean addSatellite(HeavenlyBody satellite);
 
 }
