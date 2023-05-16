@@ -59,16 +59,6 @@ public class StockItem implements Comparable<StockItem>{
         return 0;
     }
 
-    //mine
-    public void resetQuantityInStock(){
-        this.reserved = 0;
-    }
-
-    public void setPrice(Double price) {
-        if (price > 0.0){
-            this.price = price;
-        }
-    }
     public void adjustStock(int quantity){
         int newQuantity = this.quantityInStock + quantity;
         if(newQuantity >= 0) {

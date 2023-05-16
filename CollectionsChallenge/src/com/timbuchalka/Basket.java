@@ -26,12 +26,12 @@ public class Basket {
         if((item != null) && (quantity > 0)) {
             //Check if we already have the item in the basket
             int inBasket = list.getOrDefault(item, 0);
-            int newQuantity = inBasket + quantity;
+            int newQuantity = inBasket - quantity;
 
             if(newQuantity > 0){
                 list.put(item, newQuantity);
                 return quantity;
-            } else if(quantity == 0){
+            } else if(newQuantity == 0){
                 list.remove(item);
                 return quantity;
             }
@@ -41,27 +41,6 @@ public class Basket {
 
     public void clearBasket(){
         this.list.clear();
-    }
-    public boolean checkOut(){
-
-        for (StockItem stockItem : list.keySet()) {
-            stockItem.resetQuantityInStock();
-        }
-
-        return true;
-    }
-    public boolean cancelItem(StockItem item, StockList stockList){
-        for(Map.Entry<StockItem, Integer> itemInStockList : list.entrySet()){
-            if (itemInStockList.getKey().equals(item)){
-                list.remove(item);
-                item.adjustStock(item.quantityReserved());
-                item.resetQuantityInStock();
-                return true;
-            }
-        }
-        System.out.println("Item unidentified, make sure your typing an item in the basket! ");
-        return false;
-
     }
 
     public Map<StockItem, Integer> Items(){
