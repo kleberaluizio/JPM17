@@ -17,7 +17,7 @@ public class MainProject {
         vocabulary.put("WEST","W");
         vocabulary.put("QUIT","Q");
 
-
+tes
 
         int loc = 1;
 
