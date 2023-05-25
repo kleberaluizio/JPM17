@@ -43,20 +43,7 @@ public class Locations implements Map<Integer, Location>  {
         } catch (IOException e){
             e.printStackTrace();
         }
-//        try(Scanner scanner = new Scanner(new FileReader("locations_big.txt"))){
-//            scanner.useDelimiter(",");
-//            whilSystem.out.println("Imported loc: "+ loc + ": "+ description);e(scanner.hasNextLine()){
-//                int loc = scanner.nextInt();
-//                scanner.skip(scanner.delimiter());
-//                String description = scanner.nextLine();
-//                System.out.println("Imported loc: "+ loc + ": "+ description);
-//                Map<String, Integer> tempExit = new HashMap<>();
-//                locations.put(loc, new Location(loc, description, tempExit));
-//
-//            }
-//        } catch (IOException e){
-//            e.printStackTrace();
-//        }
+
         // Now read the exits
         try(BufferedReader dirFile = new BufferedReader(new FileReader("directions_big.txt"))) {
             String input;
